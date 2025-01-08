@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #2b2b2b;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #00cc66;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #f4f4f9;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #00cc66;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00994c;
+}
+
+.checkbox-group {   
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    color: #f4f4f9;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.total-container {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #ff6666;
+    font-weight: bold;
+}
+
+.card {
+    background: #333333;
+    color: white;
+    border: 2px solid #00cc66;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha verticalmente os itens */
+}
+
+.card input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.card span h1 {
+    text-align: justify;
+    margin-left: 10px;
+}
+
+.input-conta {
+    margin-top: 10px;
+    padding-left: 20px;
+    display: none; /* Inicialmente oculto */
+}
+
+.input-conta input[type="number"] {
+    width: 50%;
+    margin-top: 5px;
+}
+
+#email-container {
+    margin-top: 10px;
+    color: #f4f4f9;
+}
+
+#manual-address {
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+input[readonly] {
+    background-color: #f4f4f9;
+    color: #333;
+    cursor: not-allowed;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Inscrição</h1>
+        <form id="formulario" action="enviar_dados.php" method="POST">
+            <!-- Dados pessoais -->
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <!-- Endereço -->
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required onblur="buscarEndereco()">
+
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua" required readonly>
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required>
+
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" name="complemento">
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required readonly>
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required readonly>
+
+            <label for="pais">país:</label>
+            <input type="text" id="pais" name="pais" required readonly>
+
+            <div id="manual-address" style="display: none; color: red; text-align: center; margin-top: 10px;">
+                <p>CEP não encontrado, preencha manualmente.</p>
+            </div>
+            
+            <!-- Escolha de conta -->
+            <label>Escolha a(s) conta(s):</label>
+            <div class="checkbox-group">
+                <div class="card">
+                    <input type="checkbox" name="contas" value="150" onchange="adicionarConta(this)">
+                    <span>
+                        <h1>Conta $25.000 - $150/mês</h1>
+                    </span>
+                    <div class="input-conta" style="display:none;">
+                        <label for="conta_150">Adicionar mais contas de $25.000:</label>
+                        <input type="number" id="conta_150" name="conta_150" value="1" min="1" onchange="atualizarTotal()">
+                    </div>
+                </div>
+                <div class="card">
+                    <input type="checkbox" name="contas" value="170" onchange="adicionarConta(this)">
+                    <span>
+                        <h1>Conta $50.000 - $170/mês</h1>
+                    </span>
+                    <div class="input-conta" style="display:none;">
+                        <label for="conta_170">Adicionar mais contas de $50.000:</label>
+                        <input type="number" id="conta_170" name="conta_170" value="1" min="1" onchange="atualizarTotal()">
+                    </div>
+                </div>
+                <div class="card">
+                    <input type="checkbox" name="contas" value="245" onchange="adicionarConta(this)">
+                    <span>
+                        <h1>Conta $75.000 - $245/mês</h1>
+                    </span>
+                    <div class="input-conta" style="display:none;">
+                        <label for="conta_245">Adicionar mais contas de $75.000:</label>
+                        <input type="number" id="conta_245" name="conta_245" value="1" min="1" onchange="atualizarTotal()">
+                    </div>
+                </div>
+                <div class="card">
+                    <input type="checkbox" name="contas" value="330" onchange="adicionarConta(this)">
+                    <span>
+                        <h1>Conta $100.000 - $330/mês</h1>
+                    </span>
+                    <div class="input-conta" style="display:none;">
+                        <label for="conta_330">Adicionar mais contas de $100.000:</label>
+                        <input type="number" id="conta_330" name="conta_330" value="1" min="1" onchange="atualizarTotal()">
+                    </div>
+                </div>
+                <div class="card">
+                    <input type="checkbox" name="contas" value="360" onchange="adicionarConta(this)">
+                    <span>
+                        <h1>Conta $150.000 - $360/mês</h1>
+                    </span>
+                    <div class="input-conta" style="display:none;">
+                        <label for="conta_360">Adicionar mais contas de $150.000:</label>
+                        <input type="number" id="conta_360" name="conta_360" value="1" min="1" onchange="atualizarTotal()">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Valor total -->
+            <div class="total-container" id="total-container">
+                Total: R$ 0,00
+            </div>
+
+            <!-- Conta na Nelogica -->
+            <label>Você tem conta na Nelogica?</label>
+            <div class="checkbox-group">
+                <label><input type="radio" name="nelogica" value="sim" onchange="mostrarEmail(true)">Sim</label>
+                <label><input type="radio" name="nelogica" value="nao" onchange="mostrarEmail(false)">Não</label>
+            </div>
+
+            <div id="email-container" style="display: none;">
+                <label for="email_nelogica">E-mail cadastrado na Nelogica:</label>
+                <input type="email" id="email_nelogica" name="email_nelogica">
+            </div>
+
+            <button type="button" onclick="enviarFormulario()">Ir para o Pagamento</button>
+        </form>
+    </div>
+
+    <script>
+        function adicionarConta(checkbox) {
+            const card = checkbox.closest('.card');
+            const inputConta = card.querySelector('.input-conta');
+            
+            if (checkbox.checked) {
+                inputConta.style.display = 'block';
+            } else {
+                inputConta.style.display = 'none';
+            }
+            atualizarTotal();
+        }
+
+        function atualizarTotal() {
+            let total = 0;
+            const checkboxes = document.querySelectorAll('input[name="contas"]:checked');
+
+            checkboxes.forEach(checkbox => {
+                const value = parseFloat(checkbox.value);
+                const inputConta = checkbox.closest('.card').querySelector('input[type="number"]');
+                const quantidade = inputConta ? parseInt(inputConta.value) : 1;
+                total += value * quantidade;
+            });
+
+            document.getElementById('total-container').textContent = `Total: R$ ${total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        }
+
+        function mostrarEmail(mostrar) {
+            const emailContainer = document.getElementById('email-container');
+            emailContainer.style.display = mostrar ? 'block' : 'none';
+        }
+
+        function buscarEndereco() {
+    const cep = document.getElementById('cep').value.replace(/\D/g, '');  // Remove qualquer caractere não numérico
+
+    if (cep.length >= 5) {  // Verifica se o CEP tem pelo menos 5 dígitos
+        const username = 'davidbritis'; // Seu nome de usuário Geonames
+        const url = `http://api.geonames.org/postalCodeSearchJSON?postalcode=${cep}&maxRows=1&username=${username}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Log da resposta da API para depuração
+
+                if (data && data.postalCodes && data.postalCodes.length > 0) {
+                    const endereco = data.postalCodes[0];
+                    document.getElementById('rua').value = endereco.placeName || "Não encontrado";
+                    document.getElementById('cidade').value = endereco.adminName1 || "Não encontrado";
+                    document.getElementById('estado').value = endereco.adminCode1 || "Não encontrado";
+                    document.getElementById('pais').value = endereco.countryCode || "Não encontrado";
+                    document.getElementById('manual-address').style.display = 'none'; // Esconde a mensagem de preenchimento manual
+                    permitirEdicao(false); // Impede edição dos campos se o CEP for encontrado
+                } else {
+                    alert("CEP não encontrado! Preencha manualmente.");
+                    document.getElementById('rua').value = "";
+                    document.getElementById('cidade').value = "";
+                    document.getElementById('estado').value = "";
+                    document.getElementById('pais').value = "";
+                    document.getElementById('manual-address').style.display = 'block'; // Exibe a mensagem de preenchimento manual
+                    permitirEdicao(true); // Permite edição dos campos se o CEP não for encontrado
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao buscar CEP:", error); // Log do erro para depuração
+                alert("Erro ao buscar CEP.");
+                document.getElementById('manual-address').style.display = 'block'; // Exibe a mensagem de preenchimento manual
+                permitirEdicao(true); // Permite edição dos campos em caso de erro
+                limparEndereco();
+            });
+    } else {
+        alert("CEP inválido!");
+        limparEndereco();
+    }
+}
+
+function limparEndereco() {
+    document.getElementById('rua').value = "";
+    document.getElementById('cidade').value = "";
+    document.getElementById('estado').value = "";
+    document.getElementById('pais').value = "";
+    document.getElementById('manual-address').style.display = 'block'; // Exibe a mensagem de preenchimento manual
+    permitirEdicao(true); // Permite edição dos campos ao limpar
+}
+
+function permitirEdicao(permitir) {
+    // Se permitir for true, os campos podem ser editados; caso contrário, ficam como readonly.
+    document.getElementById('rua').readOnly = !permitir;
+    document.getElementById('cidade').readOnly = !permitir;
+    document.getElementById('estado').readOnly = !permitir;
+    document.getElementById('pais').readOnly = !permitir;
+}
+
+
+        function enviarFormulario() {
+            const checkboxes = document.querySelectorAll('input[name="contas"]:checked');
+            let total = 0;
+
+            checkboxes.forEach(checkbox => {
+                total += parseFloat(checkbox.value);
+            });
+
+            if (total > 0) {
+                alert(`Total a pagar: R$ ${total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}\nRedirecionando para o pagamento...`);
+                window.location.href = `https://gatewaypagamento.com/checkout?total=${total}`;
+            } else {
+                alert('Por favor, selecione pelo menos uma conta.');
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+{
+    "name": "titanium/site",
+    "description": "mesa proprietaria",
+    "autoload": {
+        "psr-4": {
+            "Titanium\\Site\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David Britis",
+            "email": "davidbritis@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

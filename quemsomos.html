@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Titanium Capital</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .btn-home {
+            display: block;
+            text-align: center;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #1c1c1c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background-color: #4682b4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #1c1c1c;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: #333;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #32cd32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-buy:hover {
+            background-color: #228b22;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .intro {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="btn-home">Voltar ao Home</a>
+        <h1>Quem Somos?</h1>
+        <h3>Somos a revolução!</h3>
+    </header>
+
+    <div class="container">
+        <p class="intro">
+            Na Titanium Capital, nossa missão é apoiar traders no desenvolvimento de suas carreiras e ampliar sua liberdade financeira. Oferecemos nosso capital para operações seguras e promissoras, conectando oportunidades de crescimento no mercado financeiro.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <h2>Nossa Visão</h2>
+                <p>
+                    Ser referência no mercado financeiro global, impulsionando operadores a alcançarem seus objetivos através de resultados consistentes e estratégias eficazes.
+                </p>
+            </div>
+            <div class="card">
+                <h2>Nosso Compromisso</h2>
+                <p>
+                    Disponibilizamos recursos e suporte contínuo para que traders possam operar com confiança, focando em suas estratégias sem comprometer seu patrimônio pessoal.
+                </p>
+            </div>
+            <div class="card">
+                <h2>Oportunidades</h2>
+                <p>
+                    Ao operar conosco, você amplia seus horizontes de investimento, explorando novas modalidades e construindo uma trajetória de sucesso no mercado financeiro.
+                </p>
+            </div>
+        </div>
+
+        <a href="index.html#plan-selector" class="btn-buy">Quero Começar Agora</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Titanium Capital. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

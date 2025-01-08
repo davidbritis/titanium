@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanium Capital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylemob.css">
+    <link rel="icon" type="image/x-icon" href="image/escudo.png">
+</head>
+<body>
+        
+     <div class="menu">
+        <!-- Logo à esquerda -->
+        <div class="logo">
+            <img src="image/logo.png" alt="Logo" />
+        </div>
+
+         <!-- Botão do menu para celular -->
+
+        <button class="menu-toggle">☰</button>
+
+        <nav> 
+          <ul>
+            <li>
+              <a href="./index.html">Home</a>
+            </li>
+            <li>
+              <a href="./quemsomos.html">Quem somos</a>
+            </li>
+            <li>
+              <a href="./manual.html">Manual do Trader</a>
+            </li>
+            <li>
+              <a href="#plan-selector">Nossos Planos</a>
+            </li>
+            <li>
+              <a href="#faq-container">FAQ</a>
+            </li>
+            <!--li>
+              <button onclick="irParaPagamento()">ÁREA TRADER</button>
+            </li!-->
+          </ul>
+        </nav>
+
+      </div>
+
+        <script>
+
+           document.querySelector('.menu-toggle').addEventListener('click', function () {
+           const nav = document.querySelector('.menu nav');
+          nav.classList.toggle('visible');
+           });
+        </script>
+
+    <div class="promo-bar">
+        Ganhe 40% de desconto na sua primeira ativação! 
+        <a href="https://exemplo.com/detalhes" target="_blank">CLIQUE NESTE LINK PARA MAIS DETALHES</a>. 
+        Use o código: <strong>TITANIUM2025</strong>
+    </div>
+
+    <!-- Nova Seção com Texto e Botão -->
+    <section class="hero-section">
+        <h1>Nós ajudamos traders a ter lucros</h1>
+        <h1>Você está pronto?<h1>
+        <h2>Venha fazer parte da revolução</h2>
+        <button class="hero-button" onclick="window.location. href='#plan-selector';">COMECE AGORA</button>
+    </section>
+
+         <!-- Imagem Grande e Imagens Pequenas -->
+         <div class="container">
+            <div class="main-image">
+                <img src="image/tela.avif" alt="Imagem Grande">
+            </div>
+            
+            <div class="small-images">
+                <img src="image/cnbc_44x32.png" alt="Imagem Pequena 1">
+                <img src="image/phpa_65x32.png" alt="Imagem Pequena 2">
+                <img src="image/entrepreneur_79x21.png" alt="Imagem Pequena 3">
+                <img src="image/yahoo-finance_79x29.png" alt="Imagem Pequena 4">
+                <img src="image/forbes.png" alt="Imagem Pequena 5">
+                <img src="image/business-insider.svg" alt="Imagem Pequena 6">
+            </div>
+        </div>
+
+        <div class="container1">
+            <!-- Imagem à esquerda -->
+            <div class="image">
+                <img src="image/plata1.jpg" alt="Imagem de Exemplo">
+            </div>
+    
+            <!-- Texto e título à direita -->
+            <div class="text">
+                <h1>Como funciona</h1>
+                <h3>A Titanium Capital é uma empresa de financiamento de trader, sem complicação. Criamos um sistema e processo que ajudam você a atingir seu maior potencial como Trader. Nossa plataforma é simples, sem truques ou detalhes desnecessários, e facilita a jornada rumo a lucros consistentes, permitindo que você retire seus ganhos com facilidade.</h3>
+            </div>
+        </div>
+
+    <div class="text1">
+            <h1>Diferença entre a Titanium Capital e outras empresas do mercado</h1>
+            <p>A tabela abaixo mostra como a Titanium Capital se destaca entre nossos concorrentes.<P>
+            <p>Desenvolvemos nossos planos pensado exclusivamente em você trader.</p>
+        </div>
+    </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Características/Serviços</th>
+                    <th>Obter lucro</th>
+                    <th>Outras empresas</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                    <td style="color: #fff;" >Número de dias de negociação para "Conta MASTER"</td>
+                    <td data-label="Titanium:" style="color: green;">5 dias</td>
+                    <td data-label="Outras:" style="color: red;">Até 60 dias</td>
+                </tr>
+                <tr>
+                    <td style="color: #fff;" >mínimo de dias até o primeiro saque</td>
+                    <td data-label="Titanium:" style="color: green;">7 dias</td>
+                    <td data-label="Outras:" style="color: red;">20-60 dias</td>
+                </tr>
+                <tr>
+                    <td style="color: #fff;" >Processo de retirada</td>
+                    <td data-label="Titanium:" style="color: green;">Imediato após 7 dias</td>
+                    <td data-label="Outras:" style="color: red;">até 10 dias após pedido o saque</td>
+                </tr>
+                <tr>
+                    <td style="color: #fff;" >Limites de contrato: conta de teste vs Master</td>
+                    <td data-label="Titanium:" style="color: green;">A sua escolha</td>
+                    <td data-label="Outras:" style="color: red;">Plano de dimensionamento aplicado na conta Master</td>
+                </tr>
+                <tr>
+                    <td style="color: #fff;" >Redefinição de conta Maser</td>
+                    <td data-label="Titanium:" style="color: green;">Até 3 redefinições</td>
+                    <td data-label="Outras:" style="color: red;">Nenhuma redefinição disponivel</td>
+                </tr>
+                <tr>
+                    <td style="color: #fff;" >Taxas para a conta Master</td>
+                    <td data-label="Titanium:" style="color: green;">Taxa única de $130</td>
+                    <td data-label="Outras:" style="color: red;">Mensal recorrente</td>
+                </tr>
+                <tr>
+                    <td style="color: #fff;">Suporte</td>
+                    <td data-label="Titanium:" style="color: green;">24 horas</td>
+                    <td data-label="Outras:" style="color: red;">Disponível esporadicamente</td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+
+        <div id="plan-selector" class="plan-wrapper">
+          <div class="arrow left"></div>
+          <div class="plan-container">
+            <div class="plan-card" data-value="25" data-price="150" data-profit="1500" data-contracts="3 / 30" data-loss="550" data-drawdown="1000">
+              $ 25 MIL <span class="plan-price">$ 150/mês</span>
+            </div>
+            <div class="plan-card active" data-value="50" data-price="170" data-profit="3000" data-contracts="6 / 60" data-loss="1100" data-drawdown="2000">
+              $ 50 MIL <span class="plan-price">$ 170/mês</span>
+            </div>
+            <div class="plan-card" data-value="75" data-price="245" data-profit="4500" data-contracts="9 / 90" data-loss="1650" data-drawdown="3000">
+              $ 75 MIL <span class="plan-price">$ 245/mês</span>
+            </div>
+            <div class="plan-card" data-value="100" data-price="330" data-profit="6000" data-contracts="12 / 120" data-loss="2200" data-drawdown="4000">
+              $ 100 MIL <span class="plan-price">$ 330/mês</span>
+            </div>
+            <div class="plan-card" data-value="150" data-price="360" data-profit="9000" data-contracts="18 / 180" data-loss="3300" data-drawdown="5000">
+              $ 150 MIL <span class="plan-price">$ 360/mês</span>
+            </div>
+          </div>
+          <div class="arrow right">›</div>
+        
+          <div class="plan-details">
+            <h2>$ <span id="detail-value">50</span> MIL</h2>
+            <p>$ <span id="detail-price">170</span>/mês</p>
+            <ul>
+              <li>Meta de lucro: $ <span id="detail-profit">3000</span></li>
+              <li>Tamanho máximo da posição: <span id="detail-contracts">6 Contratos / 60 Micros</span></li>
+              <li>Limite de Perda Diária: $ <span id="detail-loss">1100</span></li>
+              <li>EOD Trailing Drawdown: $ <span id="detail-drawdown">2000</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        
+    
+        <div class="start-button-container">
+          <button class="start-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfHYuKAaZ4BzQmhWSy6Tvir5BRiG6z3-Oly6eUk2RYQMn3GgA/viewform?embedded=true'">COMECE AGORA</button>
+      </div>
+      
+
+    <script>
+        function irParaPagamento() {
+        window.location.href = "https://seusite.com/pagamento";
+      }
+    </script>
+    </div>
+
+  <script src="script.js"></script>
+  <script src="script3.js"></script>
+  
+
+    <script>
+        // Função para mostrar/esconder o menu
+        function toggleMenu() {
+            const menu = document.getElementById("hiddenMenu");
+            menu.classList.toggle("show");
+        }
+    </script>
+    </div>
+
+<div class="text2">
+    <h1>Usamos a melhor e mais completa plataforma do mercado.</h1>
+    <p>A plataforma para um trading sem fronteiras.<P>
+    <p>A cada 10 traders na Amérca latina, 8 escolhem a Nelógica.</p>
+
+    <div class="image2">
+        <img src="image/BlackArrow-logo.png" alt="Imagem de Exemplo">
+    </div>
+
+    <div class="button-container">
+        <a href="https://www.blackarrowtrading.com/pt" target="_blank" class="btn">Conheça a Blackarrow</a>
+    </div>
+</div>
+
+<div id="faq-container" class="faq-container">
+    <h2>Perguntas Frequentes</h2>
+    
+    <div class="faq-item">
+      <h3 class="faq-question">O Titanium Capital é regulamentada?<span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>Sim, a Titanium Capital é regulamentada e segue as normas estabelecidas pelas autoridades financeiras competentes. Trabalhamos com corretores e plataformas que atendem a todas as exigências legais, garantindo transparência e segurança nas operações. Nosso compromisso é oferecer um ambiente confiável e regulamentado para que nossos traders possam operar com tranquilidade.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <h3 class="faq-question">Como posso abrir uma conta? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>Para abrir uma conta, basta acessar nosso site e preencher o formulário de inscrição. Em seguida, você receberá instruções detalhadas por e-mail para completar o processo...</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <h3 class="faq-question">Quais são as taxas de operação? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>As taxas de operação variam dependendo do seu plano. Consulte nossa tabela de preços para mais detalhes sobre as taxas aplicáveis...</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">É possível negociar em mercados internacionais? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>Sim, nossa plataforma oferece acesso a mercados internacionais, incluindo mercados de futuros e opções em diversas bolsas ao redor do mundo...</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">Quais são os requisitos para participar do programa? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>Para participar, é necessário ter conhecimento básico sobre negociação, além de seguir as regras e requisitos que definimos em nosso site...</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">Como funciona a simulação de contas? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>A simulação de contas permite que você pratique negociações em um ambiente sem risco, utilizando os preços reais do mercado...</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">Qual é o valor mínimo para começar? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>O valor mínimo para começar depende do seu plano e da conta que você escolher. Consulte as opções de planos disponíveis...</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">Posso usar um robô de trading? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>Não, procuramos traders reais que tomem decisões ativas e estratégicas nas negociações.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">Como posso retirar meus lucros? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>Os lucros podem ser retirados diretamente para sua conta bancária ou via outro método de pagamento oferecido em nosso portal...</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">Quais plataformas são suportadas? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>No momento trabalhamos com a plataforma da Nelógica, a Blackarrow, vemos que no mercado essa é a mais completa entres as plataformas.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">O que é a avaliação de performance? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>A avaliação de performance é uma análise contínua do seu desempenho nas negociações, com feedback para ajudar a melhorar suas estratégias...</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <h3 class="faq-question">Como posso melhorar meu desempenho? <span class="faq-icon">+</span></h3>
+      <div class="faq-answer">
+        <p>Para melhorar seu desempenho, recomendamos que você revise as métricas fornecidas, estude estratégias e participe das sessões de treinamento...</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script2.js"></script>
+
+  <div class="join-us-button">
+    <a href="#plan-selector" class="btn">Estamos esperando por você, junte-se a nós</a>
+  </div>
+
+
+
+<!-- Rodapé -->
+<footer class="footer">
+    <!-- Logo à esquerda -->
+    <div class="footer-logo">
+        <img src="image/logo.png" alt="Logo" />
+    </div>
+
+    <!-- Endereço da empresa no centro -->
+    <div class="footer-address">
+        <p>Alphaville, Barueri, São Paulo, Brasil</p>
+    </div>
+
+    <!-- Opções de menu à direita -->
+    <div class="footer-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Quem Somos</a></li>
+            <li><a href="#">Manual do Trader</a></li>
+            <li><a href="#plan-selector">Nossos Planos</a></li>
+            <li><a href="#faq-container">FAQ</a></li>
+        </ul>
+    </div>
+</footer>
+
+<div class="rodape">
+    <h3>Isenção de responsabilidade</h3>
+    <p>
+        <u><strong>Produtos Permitidos</strong></u>: Na Titanium Capital, capacitamos nossos traders a navegar no mundo dinâmico da negociação de futuros. Nossa plataforma concede acesso a uma ampla gama de produtos de futuros listados exclusivamente em bolsas de valores conceituadas, incluindo CME, COMEX, NYMEX e CBOT. É importante observar que nosso programa e plataformas não oferecem suporte ou facilitam a negociação de ações, opções, forex, criptomoedas ou CFDs.
+    </p>
+    <p>
+        <u><strong>Isenção de responsabilidade do teste de negociação</strong></u>: O programa de avaliação é uma avaliação desafiadora projetada para simular condições reais de mercado. É importante observar que passar com sucesso no teste de negociação requer um alto nível de habilidade e experiência em negociação. Nosso teste de negociação é difícil e entre 1º de janeiro de 2023 e 1º de agosto de 2023, 20,37% dos usuários passaram com sucesso em nosso teste de negociação, obtendo o PRO dentro desse período. Vale a pena mencionar que mesmo os traders experientes geralmente acham esse desafio exigente. Como tal, recomendamos o teste de negociação principalmente para aqueles com experiência substancial em negociação.
+    </p>
+    <p>
+        <u><strong>Aviso Legal de Informações</strong></u>: Esteja ciente de que todo o conteúdo disseminado pela Titanium Capital e suas entidades afiliadas se destina exclusivamente a informações gerais. Nenhuma das informações fornecidas pela Titanium Capital e suas entidades afiliadas deve ser interpretada como (a) consultoria de investimento, (b) uma oferta ou solicitação para comprar ou vender qualquer título, ou (c) um endosso, recomendação ou patrocínio de qualquer título, empresa ou fundo em particular. A utilização das informações disponíveis nos sites da Titanium Capital é realizada a seu critério, e a Titanium Capital, juntamente com seus parceiros, representantes, agentes, funcionários e contratados, isenta-se de qualquer responsabilidade ou obrigação pelo uso ou uso indevido de tais informações.
+    </p>
+    <p>A negociação de futuros, moeda estrangeira e opções contém risco substancial e não é para todos os investidores. Um investidor pode perder todo ou mais do que o investimento inicial. O capital de risco é o dinheiro que pode ser perdido sem comprometer a segurança financeira ou o estilo de vida de alguém. Apenas o capital de risco deve ser usado para negociação e apenas aqueles com capital de risco suficiente devem considerar a negociação. O desempenho passado não é necessariamente indicativo de resultados futuros.</p>
+    <p>
+        <u><strong>Regras da CFTC 4.41</strong></u> - Resultados de desempenho hipotéticos ou simulados têm certas limitações, diferentemente de um registro de desempenho real, resultados simulados não representam negociações reais. Além disso, como as negociações não foram executadas, os resultados podem ter compensado a menos ou a mais o impacto, se houver, de certos fatores de mercado, como falta de liquidez. Programas de negociação simulados em geral também estão sujeitos ao fato de que são projetados com o benefício da retrospectiva. Nenhuma representação está sendo feita de que qualquer conta irá ou provavelmente irá obter lucro ou perdas semelhantes às mostradas
+    </p>
+    <p>DIVULGAÇÃO DE TESTEMUNHOS: OS DEPOIMENTOS QUE APARECERAM NO TITANIUMCAPITAL.COM PODEM NÃO SER REPRESENTANTES DA EXPERIÊNCIA DE OUTROS CLIENTES E NÃO SÃO UMA GARANTIA DE DESEMPENHO OU SUCESSO FUTURO.</p>
+</div>
+
+<footer class="final">
+    <ul>
+        <li><a href="#">Termos de Serviço</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Suporte</a></li>
+    </ul>
+    <p>&copy; 2025 Titanium Capital. Todos os direitos reservados.</p>
+</footer>
+
+<footer>
+</footer>
+<div class="spacer"></div>
+
+</body>
+</html>
